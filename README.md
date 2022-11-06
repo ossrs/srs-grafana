@@ -11,10 +11,9 @@ Grafana dashboards for SRS Prometheus exporter and business data, allows you to 
 ### through the http api
 
 * refer to the official guide [create--update-dashboard](https://grafana.com/docs/grafana/latest/developers/http_api/dashboard/#create--update-dashboard), run 
-
-```bash
-result=$(curl https://raw.githubusercontent.com/ossrs/srs-grafana/main/dashboards/helloworld-import.json) && 
-data="{\"dashboard\":${result},\"overwrite\":true,\"inputs\":[],\"folderId\":0}" &&
-curl -s -H "Content-Type: application/json" -X POST -d $data \
-  http://admin:12345678@localhost:3000/api/dashboards/db
+```
+data=$(curl https://raw.githubusercontent.com/ossrs/srs-grafana/main/dashboards/helloworld-import.json 2>/dev/null)
+curl -s -H "Content-Type: application/json" \
+    -XPOST http://admin:12345678@localhost:3000/api/dashboards/db \
+    --data-binary "{\"dashboard\":${data},\"overwrite\":true,\"inputs\":[],\"folderId\":0}"
 ```
