@@ -15,5 +15,5 @@ curl -s -H "Content-Type: application/json" \
     --data-binary "{\"dashboard\":${data},\"overwrite\":true,\"inputs\":[],\"folderId\":0}"
 ```
 
-For node-exporter dashboard, see [grafana-dashboards](https://github.com/rfmoz/grafana-dashboards),
+For node-exporter dashboard, see [Node Exporter for Prometheus Dashboard based on 11074](https://grafana.com/grafana/dashboards/15172-node-exporter-for-prometheus-dashboard-based-on-11074/)
 
