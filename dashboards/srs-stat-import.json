@@ -1207,7 +1207,7 @@
           "datasource": {
             "type": "prometheus"
           },
-          "expr": "rate(srs_send_bytes_total[30s])/1000 * on(instance) group_left(tag,label) srs_build_info{tag=~\"$server_role\",instance=~\"$instance\",label=~\"$zone\"}",
+          "expr": "rate(srs_send_bytes_total[30s])*8/1000 * on(instance) group_left(tag,label) srs_build_info{tag=~\"$server_role\",instance=~\"$instance\",label=~\"$zone\"}",
           "refId": "A"
         }
       ],
